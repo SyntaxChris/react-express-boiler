@@ -15,10 +15,13 @@
 Clone Repo
 
 ````
+git clone https://github.com/SyntaxChris/react-redux-express-boiler
+````
+
 npm install dependencies
 
 ````
-cd react-redux-express-boiler 
+cd express-react-redux-starter 
 
 npm install
 ````
@@ -67,3 +70,5 @@ npm run start
 
 Note: I'm using pm2 for production server, you should install it on server via 'npm install pm2 -g'.
 if you don't want to use pm2, just change pm2 with node in package.json file in scripts section.
+
+
