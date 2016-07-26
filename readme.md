@@ -21,7 +21,7 @@ git clone https://github.com/SyntaxChris/react-redux-express-boiler
 npm install dependencies
 
 ````
-cd express-react-redux-starter 
+cd react-express-boiler
 
 npm install
 ````
