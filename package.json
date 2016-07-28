@@ -11,20 +11,6 @@
     "test:watch": "npm run test -- --watch",
     "lint": "eslint src test webpack"
   },
-  "keywords": [
-    "ExpressJS",
-    "ReactJS",
-    "Redux",
-    "React hot loader",
-    "React Router",
-    "SCSS",
-    "Webpack Devevelopment configuration",
-    "Webpack Production configuration",
-    "Airbnb Eslint",
-    "pm2",
-    "mocha",
-    "chai"
-  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SyntaxChris/react-redux-express-boiler.git"
