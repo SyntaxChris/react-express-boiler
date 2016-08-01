@@ -1,15 +1,10 @@
 import React, { PropTypes } from 'react';
-import Header from './common/Header';
+import TodoLayout from './Todos/TodosLayout';
 
-function App({ children }) {
-  return (
-    <div className="container">
-      <Header />
-      {children}
-    </div>
-  );
-}
-
-App.propTypes = { children: PropTypes.object };
+const App = () => (
+  <div className="container">
+    <TodoLayout />
+  </div>
+);
 
 export default App;

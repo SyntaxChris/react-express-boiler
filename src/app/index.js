@@ -1,27 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore } from 'redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-
+// import configureStore from './configureStore';
+import rootReducer from './reducers'; //data
 import App from './components/App';
-import Home from './components/home/Home';
-import About from './components/about/About';
+// import Root from './components/Root'; //ui
+import './components/bundle.scss'; //assets
 
-import reducers from './reducers';
+const persistedState = {
+  todos: [{
+    id: '0',
+    text: 'Hello Persisted World',
+    completed: false
+  }]
+}
 
-import './components/bundle.scss';
-
-const createStoreWithMiddleware = applyMiddleware()(createStore);
-const store = createStoreWithMiddleware(reducers);
+const store = createStore(rootReducer, persistedState);
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home} />;
-        <Route path="/about" component={About} />
-      </Route>
-    </Router>
-  </Provider>
-  , document.getElementById('react-root'));
+<Provider store={store}>
+  <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
+    <Route path='/' component={App} />
+  </Router>
+</Provider>, document.getElementById('react-root'));
