@@ -12,7 +12,7 @@ export default class TodosLayout extends React.Component {
     //   {id: 5, completed: false, text: "I'm also not so complete :("}
     // ];
     const { todos } = this.props;
-    debugger;
+
     return(
       <div className="container todos">
         <h1>Todos Layout</h1>
