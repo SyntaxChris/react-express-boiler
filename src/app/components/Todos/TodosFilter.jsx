@@ -1,26 +1,25 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 import { setTodoFilter } from '../../actions';
 
-const FilterLink = ({ setFilter, filter, children }) => (
-  <a href="#"
-    onClick={(e) => {
-      e.preventDefault();
-      setFilter(filter)
-    }
-  }>{children}</a>
+const FilterLink = ({ filter, children }) => (
+  <Link 
+    to={filter === 'all' ? '' : filter}
+    activeStyle={{
+      textDecoration: 'none',
+      color: 'black'
+    }}>
+    { children }
+  </Link>
 );
 
 const TodosFilter = ({ dispatch }) => {
-  const filterTodo = (filter) => {
-    dispatch(setTodoFilter(filter))
-  };
-
   return(
     <div>
-      <FilterLink setFilter={filterTodo} filter={'all'} >All</FilterLink>{' '}
-      <FilterLink setFilter={filterTodo} filter={'active'} >Active</FilterLink>{' '}
-      <FilterLink setFilter={filterTodo} filter={'completed'} >Completed</FilterLink>
+      <FilterLink filter={'all'} >All</FilterLink>{' '}
+      <FilterLink filter={'active'} >Active</FilterLink>{' '}
+      <FilterLink filter={'completed'} >Completed</FilterLink>
     </div>
   )
 };

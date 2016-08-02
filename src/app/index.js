@@ -11,7 +11,7 @@ const store = configureStore();
 const Root = ({ store }) => (
   <Provider store={store}>
     <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
-      <Route path='/' component={App} />
+      <Route path='/(:filter)' component={App} />
     </Router>
   </Provider>
 );

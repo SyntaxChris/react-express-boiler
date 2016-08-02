@@ -5,6 +5,35 @@ import { deleteTodo } from '../../actions';
 import { toggleTodo } from '../../actions';
 
 class TodosList extends React.Component {
+
+  // componentWillMount() {
+  //   console.log('Component WILL MOUNT!')
+  // }
+
+  // componentDidMount() {
+  //   console.log('Component DID MOUNT!')
+  // }
+
+  // componentWillReceiveProps(newProps) {    
+  //   console.log('Component WILL RECIEVE PROPS!')
+  // }
+
+  // shouldComponentUpdate(newProps, newState) {
+  //   return true;
+  // }
+
+  // componentWillUpdate(nextProps, nextState) {
+  //   console.log('Component WILL UPDATE!');
+  // }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   console.log('Component DID UPDATE!')
+  // }
+
+  // componentWillUnmount() {
+  //   console.log('Component WILL UNMOUNT!')
+  // }
+
   render(){
     const { 
       todos,
@@ -29,7 +58,8 @@ class TodosList extends React.Component {
         case 'completed':
           return todos.filter(t => t.completed)
         default:
-          throw new Error(`Unknown filter: ${f}`)
+          // throw new Error(`Unknown filter: ${f}`)
+          return todos;
       }
     }
 
@@ -54,9 +84,8 @@ class TodosList extends React.Component {
   }
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   todos: state.todos,
-  todosFilter: state.todosFilter
 });
 
 export default connect(mapStateToProps)(TodosList);

@@ -3,11 +3,11 @@ import TodosList from './TodosList';
 import TodoInput from './TodoInput';
 import TodosFilter from './TodosFilter';
 
-const TodosLayout = () => (
+const TodosLayout = ({ filter }) => (
   <div className="container todos">
     <h1>Todos Layout</h1>
     <TodoInput />
-    <TodosList />
+    <TodosList todosFilter={filter}/>
     <TodosFilter />
   </div>
 );

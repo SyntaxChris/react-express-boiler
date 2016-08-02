@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import TodoLayout from './Todos/TodosLayout';
 
-const App = () => (
+const App = ({ params }) => (
   <div className="container">
-    <TodoLayout />
+    <TodoLayout filter={ params.filter } />
   </div>
 );
 

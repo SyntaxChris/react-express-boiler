@@ -17,7 +17,7 @@ export const toggleTodo = (id) => (
   id,
 });
 
-export const setTodoFilter = (filter) => ({
-  type: 'SET_TODO_FILTER',
-  filter
-});
+// export const setTodoFilter = (filter) => ({
+//   type: 'SET_TODO_FILTER',
+//   filter
+// });
