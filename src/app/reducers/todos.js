@@ -20,30 +20,24 @@ const todo = (state, action) => {
   }
 };
 
-
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
-        ...state,
-        todo(undefined, action)
+        ...state,todo(undefined, action)
       ];
     case 'DELETE_TODO':
       return [
-        ...state.filter((t) => {
-          return t.id !== action.id
-        })
+        ...state.filter(t => t.id !== action.id)
       ];
     case 'TOGGLE_TODO':
-      let s = [
-        ...state.map((t) => {
-          todo(t, action)
-        })
+      return [
+        ...state.map(t => todo(t, action))
       ];
-      debugger;
     default:
       return state;
   }
 }
+
 
 export default todos;

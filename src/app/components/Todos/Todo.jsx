@@ -4,13 +4,13 @@ const Todo = ({
   completed, 
   text, 
   id,
-  onTodoToggleClick,
-  onDeleteTodoClick
+  onToggleClick,
+  onDeleteClick
 }) => (
   <li>
     <span
       onClick={
-        () => onTodoToggleClick(id) 
+        () => onToggleClick(id) 
       }>
       { JSON.stringify(completed) }
     </span>{'| '}
@@ -18,11 +18,10 @@ const Todo = ({
       {text}
     </span>{' |'}
     <span onClick={
-      () => onDeleteTodoClick(id)
+      () => onDeleteClick(id)
     }>
       x
     </span>
-    <pre>{JSON.stringify(id)}</pre>
   </li>
 );
 
